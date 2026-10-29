@@ -1,0 +1,39 @@
+.panel {
+  margin-top: 40px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid rgba(240, 234, 226, .16);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 15% 0%, rgba(238, 126, 94, .09), transparent 48%), #0c0e11;
+}
+
+.panelHead { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 26px; }
+.panelHead > div { display: grid; gap: 8px; }
+.eyebrow, .year, .panelFoot, .source { color: #91a3b7; font: 9px/1.5 var(--font-mono, monospace); letter-spacing: .1em; }
+.panelHead strong { color: #f1f3f6; font: 600 clamp(18px, 2.2vw, 24px)/1.2 Arial, sans-serif; }
+.panelHead strong small { color: #91a3b7; font-size: 12px; font-weight: 400; }
+.year { padding: 7px 10px; border: 1px solid rgba(240,234,226,.13); border-radius: 7px; }
+.calendarScroll { overflow-x: auto; padding: 2px 0 10px; }
+.calendar { display: grid; width: 100%; min-width: 700px; grid-template-rows: repeat(7, 11px); grid-auto-columns: minmax(8px, 1fr); grid-auto-flow: column; gap: 4px; }
+.cell { display: block; border: 1px solid rgba(209,222,237,.07); border-radius: 3px; background: #171b21; }
+.empty { visibility: hidden; }
+.level0 { background: #171b21; }
+.level1 { border-color: rgba(85,217,196,.17); background: #16443e; }
+.level2 { border-color: rgba(85,217,196,.28); background: #187e73; }
+.level3 { border-color: rgba(85,217,196,.4); background: #36b59f; }
+.level4 { border-color: rgba(85,217,196,.55); background: #8be0c9; }
+.panelFoot { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; letter-spacing: .04em; }
+.panelFoot > span { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.panelFoot i { width: 10px; height: 10px; border-radius: 2px; background: #171b21; }
+.panelFoot .legend1 { background: #16443e; }
+.panelFoot .legend2 { background: #187e73; }
+.panelFoot .legend3 { background: #36b59f; }
+.panelFoot .legend4 { background: #8be0c9; }
+.panelFoot a, .status a { color: #7ed8c7; text-decoration: none; }
+.panelFoot a:hover, .status a:hover { color: #f1f3f6; }
+.source { margin: 19px 0 0; color: #617184; font-size: 8px; letter-spacing: .06em; }
+.status { padding: 24px 0; color: #aab5c3; font: 13px/1.6 Arial, sans-serif; }
+
+@media (max-width: 600px) {
+  .panel { margin-top: 28px; }
+  .panelFoot { align-items: flex-start; flex-direction: column; }
+}

@@ -1,0 +1,110 @@
+.carousel {
+  display: flex;
+  width: min(100%, 510px);
+  flex-direction: column;
+  margin-top: 55px;
+  border: 1px solid rgba(255, 255, 255, .82);
+  border-radius: 19px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.carouselHead {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 18px 11px;
+  color: #5d6877;
+  font: 8px/1.4 var(--font-mono, monospace);
+  letter-spacing: .12em;
+}
+
+.viewport { display: flex; min-height: 0; flex: 1; overflow: hidden; }
+
+.track {
+  display: flex;
+  flex: 0 0 400%;
+  width: 400%;
+  height: 100%;
+  transform: translateX(-25%);
+  transition: transform .62s cubic-bezier(.2,.75,.25,1);
+}
+
+.teleport { transition: none; }
+
+.slide { display: flex; flex: 0 0 25%; min-width: 0; padding: 0 12px; }
+
+.card {
+  display: grid;
+  min-height: 128px;
+  height: 100%;
+  flex: 1;
+  grid-template-columns: 58px 1fr auto;
+  align-items: center;
+  gap: 17px;
+  padding: 19px 18px;
+  border: 1px solid rgba(240, 234, 226, .14);
+  border-radius: 14px;
+  background: #101216;
+  color: #f0f2f5;
+  text-decoration: none;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.card:hover, .card:focus-visible { border-color: rgba(240,234,226,.42); background: #151920; transform: translateY(-2px); }
+.card:focus-visible { outline: 2px solid #5595ff; outline-offset: 3px; }
+
+.avatarWrap { position: relative; display: block; width: 58px; height: 58px; }
+.avatar { display: block; width: 100%; height: 100%; border: 1px solid #d8dee7; border-radius: 50%; background: #e9edf2; object-fit: cover; object-position: 50% 22%; }
+
+.brandMark {
+  display: grid;
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font: 700 10px/1 Arial, sans-serif;
+  letter-spacing: -.06em;
+}
+
+.linkedin .brandMark { background: #0a66c2; color: white; }
+.github .brandMark { background: #24292f; color: #fff; font-size: 7px; letter-spacing: .01em; }
+.instagram .brandMark { background: radial-gradient(circle at 30% 100%, #ffd776, #ff6746 48%, #bc3081 75%, #4c63d2); color: white; font-size: 13px; }
+
+.cardCopy { display: flex; min-width: 0; flex-direction: column; gap: 5px; }
+.cardCopy strong { font: 600 16px/1.2 Arial, sans-serif; }
+.cardCopy > span { color: #c4cbd6; font: 11px/1.4 Arial, sans-serif; }
+.cardCopy small { color: #8994a5; font: 10px/1.45 Arial, sans-serif; }
+.cardAction { display: flex; align-items: center; gap: 8px; color: #9ca9bb; font: 7px/1.2 var(--font-mono, monospace); letter-spacing: .08em; white-space: nowrap; }
+.cardAction b { color: #ec8a67; font: 17px/1 Arial, sans-serif; }
+.carouselFoot { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 18px 12px; }
+.footBalance { min-width: 1px; }
+.dots { display: flex; justify-content: center; gap: 6px; padding: 0; }
+.dots button { width: 5px; height: 5px; padding: 0; border: 0; border-radius: 50%; background: #465164; cursor: pointer; transition: width .2s ease, background .2s ease; }
+.dots button:focus-visible { outline: 2px solid #5595ff; outline-offset: 3px; }
+.dots .activeDot { width: 18px; border-radius: 99px; background: #ec8a67; }
+
+@media (max-width: 760px) {
+  .carousel { margin-top: 38px; }
+  .card { min-height: 112px; grid-template-columns: 46px 1fr auto; gap: 12px; padding: 15px 13px; }
+  .avatarWrap { width: 46px; height: 46px; }
+  .brandMark { right: -4px; bottom: -3px; width: 20px; height: 20px; font-size: 8px; }
+  .cardCopy strong { font-size: 14px; }
+  .cardCopy > span { font-size: 10px; }
+  .cardCopy small { font-size: 9px; }
+  .cardAction { gap: 4px; font-size: 6px; }
+  .carouselFoot { padding-right: 13px; padding-left: 13px; }
+}
+
+@media (max-width: 430px) {
+  .card { grid-template-columns: 40px 1fr; gap: 11px; }
+  .avatarWrap { width: 40px; height: 40px; }
+  .cardAction { grid-column: 2; margin-top: -3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .dots button, .card { transition: none; }
+}

@@ -1,0 +1,75 @@
+@use "../tokens" as *;
+
+.header {
+  position: sticky;
+  z-index: 20;
+  top: 13px;
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 18px clamp(20px, 3.2vw, 50px) 0;
+  padding: 0 19px 0 27px;
+  border: 1px solid rgba(216, 211, 208, .24);
+  border-radius: 999px;
+  background: rgba(19, 18, 19, .92);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .21);
+  backdrop-filter: blur(18px);
+}
+
+.mark {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #eee7dc;
+  font: 400 clamp(18px, 2vw, 25px)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.mark:focus-visible { outline: 2px solid #4d8dff; outline-offset: 6px; border-radius: 3px; }
+
+.welcomeType {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  animation: welcome-type 1.05s steps(7, end) .35s forwards;
+}
+
+@keyframes welcome-type {
+  to { width: 8ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcomeType { width: 8ch; animation: none; }
+}
+
+.nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 48px); }
+.nav a { color: #ece8e2; font: 400 12px/1 $sans; text-decoration: none; transition: color .2s ease, background .2s ease; }
+.nav a:hover, .nav a:focus-visible { color: $amber; }
+.linkIndex { display: none; }
+.resume { display: inline-flex; min-width: 137px; min-height: 45px; align-items: center; justify-content: space-between; padding: 0 17px 0 20px; border: 1px solid rgba(235, 230, 221, .32); border-radius: 16px; background: linear-gradient(110deg, rgba(255,255,255,.1), rgba(255,255,255,.025)); }
+.resume span { font-size: 19px; }
+.menuButton { display: none; }
+
+@media (max-width: 760px) {
+  .header { top: 8px; min-height: 58px; margin: 11px 12px 0; padding: 0 15px 0 18px; border-radius: 24px; }
+  .mark { font-size: 19px; }
+  .menuButton { display: inline-flex; align-items: center; gap: 9px; padding: 10px 0 10px 10px; border: 0; background: transparent; color: $ice; font: 10px $mono; text-transform: uppercase; letter-spacing: .08em; }
+  .menuGlyph { color: $amber; font-size: 15px; }
+  .nav { position: absolute; top: 66px; left: 0; display: none; width: 100%; align-items: stretch; gap: 0; padding: 7px 18px 19px; border: 1px solid rgba(216,211,208,.2); border-radius: 20px; background: rgba(19,18,19,.98); box-shadow: 0 15px 30px rgba(0,0,0,.32); }
+  .navOpen { display: flex; flex-direction: column; }
+  .nav a { padding: 15px 0; border-bottom: 1px solid rgba(242,245,250,.08); }
+  .nav .resume { align-self: flex-start; min-height: 40px; margin-top: 13px; padding: 0 14px; border: 1px solid rgba(235,230,221,.32); }
+}
+
+.nav .resume { border-color: #f3f3f1; background: #f3f3f1; color: #111316; }
+.nav .resume:hover, .nav .resume:focus-visible { border-color: #fff; background: #fff; color: #111316; }
+
+/* Nudge the navigation down by about half a centimeter. */
+.header { top: 32px; margin-top: 37px; }
+@media (max-width: 760px) {
+  .header { top: 27px; margin-top: 30px; }
+}

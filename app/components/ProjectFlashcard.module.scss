@@ -1,0 +1,88 @@
+.flashcard { width: 100%; perspective: 1200px; }
+.flashcard[data-project="traceme"] .front { border-color: rgba(182,160,255,.46); background: radial-gradient(ellipse at 92% 7%, rgba(182,160,255,.12), transparent 34%), linear-gradient(145deg, #15141c, #090c10 74%); }
+.flashcard[data-project="traceme"] .cardHead span:first-child, .flashcard[data-project="traceme"] .frontTitle em, .flashcard[data-project="traceme"] .limiter small, .flashcard[data-project="traceme"] .limiter + .connector, .flashcard[data-project="traceme"] .feedback > span { color: #b6a0ff; }
+.flashcard[data-project="traceme"] .limiter { border-color: rgba(182,160,255,.52); background: rgba(87,65,139,.13); }
+.flashcard[data-project="inspector"] .front { border-color: rgba(105,202,255,.5); background: radial-gradient(ellipse at 92% 7%, rgba(105,202,255,.12), transparent 34%), linear-gradient(145deg, #12181d, #090c10 74%); }
+.flashcard[data-project="inspector"] .cardHead span:first-child, .flashcard[data-project="inspector"] .frontTitle em, .flashcard[data-project="inspector"] .limiter small, .flashcard[data-project="inspector"] .limiter + .connector, .flashcard[data-project="inspector"] .feedback > span { color: #69caff; }
+.flashcard[data-project="inspector"] .limiter { border-color: rgba(105,202,255,.52); background: rgba(38,99,132,.15); }
+.flipButton { display: flex; align-items: center; gap: 9px; margin: 0 0 10px auto; padding: 0; border: 0; background: transparent; color: #8f9aac; cursor: pointer; font: 8px/1.3 var(--font-mono, monospace); letter-spacing: .1em; }
+.flipButton span { color: #55d9c4; font: 16px/1 Arial, sans-serif; transition: transform .35s ease; }
+.flipButton:hover { color: #edf3f6; }
+.flipButton:hover span { transform: rotate(90deg); }
+.flipButton:focus-visible { outline: 2px solid #55d9c4; outline-offset: 5px; }
+.card { position: relative; height: clamp(390px, 35vw, 430px); transform-style: preserve-3d; transition: transform .65s cubic-bezier(.2,.75,.25,1); }
+.flipped { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; display: flex; overflow: hidden; flex-direction: column; padding: clamp(18px, 2.2vw, 26px); border: 1px solid rgba(85,217,196,.44); border-radius: 15px; background: radial-gradient(ellipse at 92% 7%, rgba(85,217,196,.11), transparent 34%), linear-gradient(145deg, #13191e, #090c10 74%); backface-visibility: hidden; }
+.back { transform: rotateY(180deg); border-color: #dce2e9; background: #fff; color: #17202b; }
+.cardHead, .cardFoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #7d8a99; font: 8px/1.4 var(--font-mono, monospace); letter-spacing: .1em; }
+.cardHead span:first-child { color: #55d9c4; }
+.back .cardHead span:first-child { color: #ec8a67; }
+.frontTitle { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); align-items: end; gap: 12px; margin: 18px 0 14px; }
+.frontTitle small, .backTitle small { color: #8795a5; font: 8px/1.4 var(--font-mono, monospace); letter-spacing: .08em; }
+.frontTitle h3, .backTitle h3 { margin: 0; color: #edf1f4; font: 500 clamp(19px, 2.1vw, 25px)/1.06 Arial, sans-serif; letter-spacing: -.055em; }
+.frontTitle h3 { text-align: right; }
+.frontTitle em { color: #55d9c4; font-style: normal; }
+.flow { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr) minmax(0,.9fr); align-items: center; gap: 7px; margin-top: auto; }
+.flowGroup { display: grid; min-width: 0; grid-template-columns: minmax(0,1fr) 20px; align-items: center; gap: 7px; }
+.flowGroup:last-child { grid-template-columns: minmax(0,1fr); }
+.flowMiddle { min-width: 0; }
+.flowNode { display: flex; width: 100%; min-width: 0; height: 82px; flex-direction: column; justify-content: center; gap: 6px; padding: 9px; overflow: hidden; border: 1px solid rgba(193,208,222,.18); border-radius: 10px; background: rgba(255,255,255,.035); }
+.flowNode small { color: #8293a3; font: 7px/1.4 var(--font-mono, monospace); letter-spacing: .06em; }
+.flowNode strong { color: #e8eef2; font: 600 11px/1.2 Arial, sans-serif; }
+.flowNode > span { color: #8492a0; font: 8px/1.35 Arial, sans-serif; }
+.limiter { border-color: rgba(85,217,196,.5); background: rgba(30,98,88,.13); }
+.limiter small { color: #55d9c4; }
+.outcome { border-color: rgba(236,138,103,.4); }
+.outcome strong { display: flex; gap: 4px; font-size: 10px; }
+.outcome strong i { color: #73d2b3; font-style: normal; }
+.outcome strong b { color: #f19678; font-weight: 600; }
+.connector { color: #55d9c4; font: 17px/1 Arial, sans-serif; text-align: center; }
+.feedback { display: flex; align-items: center; gap: 9px; margin-top: 17px; color: #aab5c0; font: 8px/1.3 var(--font-mono, monospace); letter-spacing: .06em; }
+.feedback > span { color: #55d9c4; }
+.cardFoot { margin-top: auto; padding-top: 11px; border-top: 1px solid rgba(222,233,239,.12); font-size: 7px; }
+.backTitle { margin: 17px 0 12px; }
+.backTitle h3 { margin-top: 5px; color: #17202b; }
+.backTitle small { color: #64748b; }
+.backTitle em { color: #df704f; font-style: normal; }
+.explanations { display: grid; gap: 7px; }
+.explanations > div { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; padding: 9px 11px; border: 1px solid #dce3eb; border-radius: 9px; background: #f5f7fa; }
+.explanations > div > span { color: #bb603f; font: 8px/1.5 var(--font-mono, monospace); }
+.explanations p { display: grid; gap: 3px; margin: 0; }
+.explanations strong { color: #17202b; font: 600 11px/1.25 Arial, sans-serif; }
+.explanations small { color: #526174; font: 10px/1.4 Arial, sans-serif; }
+.caveat { margin: auto 0 9px; color: #5e6876; font: 10px/1.45 Arial, sans-serif; }
+.back .cardHead, .back .cardFoot { color: #657386; border-color: #dce2e9; }
+.back .cardHead span:first-child, .flashcard[data-project] .back .cardHead span:first-child { color: #bb603f; }
+
+@media (max-width: 900px) {
+  .frontTitle { grid-template-columns: 1fr; gap: 8px; }
+  .frontTitle h3 { font-size: 22px; text-align: left; }
+}
+
+@media (max-width: 760px) {
+  .card { height: 410px; }
+  .frontTitle { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); align-items: end; }
+  .frontTitle h3 { text-align: right; }
+}
+
+@media (max-width: 480px) {
+  .card { height: 430px; }
+  .face { padding: 16px 13px; }
+  .cardHead { font-size: 7px; }
+  .frontTitle { grid-template-columns: 1fr; align-items: start; gap: 8px; margin: 17px 0; }
+  .frontTitle h3 { text-align: left; }
+  .flow { grid-template-columns: minmax(0,1fr) minmax(0,1.2fr) minmax(0,.9fr); gap: 3px; }
+  .flowGroup { grid-template-columns: minmax(0,1fr) 12px; gap: 3px; }
+  .flowNode { min-height: 79px; padding: 7px 6px; }
+  .flowNode strong { font-size: 10px; }
+  .flowNode > span { font-size: 8px; }
+  .flowNode small { font-size: 6px; }
+  .connector { font-size: 12px; }
+  .feedback { flex-wrap: wrap; gap: 5px; font-size: 7px; }
+  .backTitle h3 { font-size: 27px; }
+  .explanations small { font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .flipButton span { transition: none; }
+}
