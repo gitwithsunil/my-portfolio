@@ -1,0 +1,21 @@
+# G. Sunil Kumar Reddy — Portfolio
+
+This website presents the work and professional direction of G. Sunil Kumar Reddy, a Computer Science and Engineering student at NIST University.
+
+## Professional focus
+- Backend development and software engineering
+- APIs, server-side application logic, databases, and practical software
+- Supporting interests: Linux, networking, cybersecurity, and product thinking
+- Seeking internships and entry-level software engineering opportunities
+
+## Projects
+- Self-Evolving API Rate Limiter: public repository documents a FastAPI service with token bucket and sliding-window controls, per-request telemetry, Z-score spike detection, a Q-learning limit adjustment loop, a dashboard, and traffic simulators. The README notes in-memory state and a warm-up requirement for adaptive behavior. This is an exploratory project; no production impact or performance claim is made.
+- TraceMe: public repository describes a Python/Flask interface integrating Sherlock for username searches across public platforms. Search results are possible account matches, not confirmed identity. Holehe integration is documented as work in progress.
+- Network Troubleshooting Inspector: project details and stack were supplied by the portfolio owner; repository verification is pending.
+
+## Public profiles
+- GitHub: https://github.com/gitwithsunil
+- LinkedIn: https://www.linkedin.com/in/g-sunil-kumar-reddy-458779334
+
+## Accuracy note
+Project claims are limited to supplied profile details and public repository documentation. Education dates and current enrollment should be confirmed before external publication. No email address or live demo was supplied.
