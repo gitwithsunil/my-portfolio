@@ -1,0 +1,6 @@
+@use "tokens" as *;
+.page { display: flex; min-height: 100svh; align-items: flex-start; flex-direction: column; justify-content: center; padding: 10vw; background: radial-gradient(ellipse at 80% 50%, rgba(29,54,91,.22), transparent 40%), $black; }
+.page > span { color: $signal; font: 10px $mono; letter-spacing: .1em; }
+.page h1 { margin: 20px 0; font-size: clamp(44px, 8vw, 84px); font-weight: 500; letter-spacing: -.06em; }
+.page p { color: #9ba5b3; }
+.page a { margin-top: 20px; color: $ice; font: 11px $mono; }

@@ -1,0 +1,13 @@
+@use "tokens" as *;
+
+:root { color-scheme: dark; --background: #{$black}; --foreground: #{$ice}; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; background: $black; color: $ice; font-family: $sans; font-size: 16px; -webkit-font-smoothing: antialiased; }
+::selection { color: $black; background: $signal; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid $signal; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
